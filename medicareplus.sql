@@ -1,6 +1,6 @@
 -- =====================================================
--- BASE DE DONN�ES : M�diCare+ (avec anomalies int�gr�es)
--- Examen : Qualit� et Nettoyage de Donn�es SQL
+-- BASE DE DONNEES : MédiCare+ (avec anomalies intégrées)
+-- Examen : Qualité et Néttoyage de Données SQL
 -- Version PostgreSQL
 -- =====================================================
 
@@ -47,9 +47,9 @@ INSERT INTO clients VALUES
 (10018, 'Blanc Jean-Pierre', NULL, '0667890124', 'jp.blanc@free.fr', '1983-09-08', '2023-04-01', 'Grenoble', '38000'),
 (10019, 'Girard Sophie-Anne', NULL, '0678901235', 'sophie.girard@gmail.com', '1986-11-22', '2023-04-15', 'Dijon', '21000'),
 (10247, 'Fabre', 'Julien', '0689012346', 'julien.fabre@yahoo.fr', '1990-02-18', '2023-06-15', 'Reims', '51100'),
-(10020, 'Muller', 'L�a', '0690123457', 'lea.muller@gmail.com', '1992-06-14', '2023-05-01', 'Angers', '49000'),
+(10020, 'Muller', 'Léa', '0690123457', 'lea.muller@gmail.com', '1992-06-14', '2023-05-01', 'Angers', '49000'),
 (10021, 'Lefebvre', 'Hugo', '0601234568', 'hugo.lefebvre@hotmail.com', '1988-08-25', '2023-05-10', 'Caen', '14000'),
-(10022, 'Lambert', 'Chlo�', '0612345680', NULL, '1995-12-30', '2023-05-20', 'Tours', '37000'),
+(10022, 'Lambert', 'Chloé', '0612345680', NULL, '1995-12-30', '2023-05-20', 'Tours', '37000'),
 (10023, 'Bonnet', 'Maxime', '0623456781', 'maxime.bonnet@free.fr', '1984-04-08', '2023-06-01', 'Clermont-Ferrand', '63000'),
 (10024, 'Francois', 'Sarah', '0634567892', 'sarah.francois@orange.fr', '1991-09-12', '2023-06-10', 'Limoges', '87000');
 
@@ -66,9 +66,9 @@ CREATE TABLE produits (
 );
 
 INSERT INTO produits VALUES
--- Cat�gorie : Antidouleurs (prix normaux entre 5-15�)
-(1001, 'Parac�tamol 1g', 8.50, 'Antidouleurs', 250, '2026-12-31'),
-(1002, 'Ibuprof�ne 400mg', 12.00, 'Antidouleurs', 180, '2026-08-15'),
+-- Categorie : Antidouleurs (prix normaux entre 5-15�)
+(1001, 'Paracétamol 1g', 8.50, 'Antidouleurs', 250, '2026-12-31'),
+(1002, 'Ibuprofène 400mg', 12.00, 'Antidouleurs', 180, '2026-08-15'),
 (1003, 'Aspirine 500mg', 6.75, 'Antidouleurs', 320, '2025-10-20'),
 (1004, 'Morphine 10mg', 0.01, 'Antidouleurs', 45, '2026-03-10'),
 (1005, 'Doliprane Enfant', 125.00, 'Antidouleurs', 90, '2026-05-18'),
@@ -77,26 +77,26 @@ INSERT INTO produits VALUES
 (2001, 'Amoxicilline 1g', 22.50, 'Antibiotiques', 120, '2026-11-30'),
 (2002, 'Azithromycine 500mg', 28.00, 'Antibiotiques', 85, '2026-07-25'),
 (2003, 'Ciprofloxacine 500mg', 31.50, 'Antibiotiques', -5, '2026-09-12'),
-(2004, 'P�nicilline V', 18.75, 'Antibiotiques', 30, '2019-06-15'),
+(2004, 'Pénicilline V', 18.75, 'Antibiotiques', 30, '2019-06-15'),
 
 -- Cat�gorie : Vitamines (prix normaux entre 8-20�)
 (3001, 'Vitamine C 1000mg', 12.90, 'Vitamines', 200, '2027-01-31'),
 (3002, 'Vitamine D 2000UI', 15.50, 'Vitamines', 150, '2026-12-15'),
 (3003, 'Multivitamines', 2.10, 'Vitamines', 180, '2026-08-20'),
 
--- Cat�gorie : Antihistaminiques (prix normaux entre 10-18�)
-(4001, 'C�tirizine 10mg', 14.20, 'Antihistaminiques', 140, '2026-10-30'),
+-- Catégorie : Antihistaminiques (prix normaux entre 10-18�)
+(4001, 'Cétirizine 10mg', 14.20, 'Antihistaminiques', 140, '2026-10-30'),
 (4002, 'Loratadine 10mg', 11.80, 'Antihistaminiques', -12, '2026-06-18'),
 
--- Cat�gorie : Dermatologie (prix normaux entre 12-25�)
-(5001, 'Cr�me Hydratante', 18.50, 'Dermatologie', 95, '2025-12-31'),
+-- Catégorie : Dermatologie (prix normaux entre 12-25�)
+(5001, 'Crème Hydratante', 18.50, 'Dermatologie', 95, '2025-12-31'),
 (5002, 'Pommade Cicatrisante', 21.00, 'Dermatologie', 40, '2024-03-15'),
 
 -- Produits normaux 
-(6001, 'Sirop Toux S�che', 13.75, 'Respiratoire', 110, '2026-09-30'),
+(6001, 'Sirop Toux Sèche', 13.75, 'Respiratoire', 110, '2026-09-30'),
 (6002, 'Spray Nasal', 16.20, 'Respiratoire', 88, '2026-11-20'),
-(7001, 'Compresses St�riles', 8.90, 'Mat�riel', 300, '2028-12-31'),
-(7002, 'Bandages �lastiques', 11.50, 'Mat�riel', 220, '2028-06-30');
+(7001, 'Compresses Stériles', 8.90, 'Matériel', 300, '2028-12-31'),
+(7002, 'Bandages Elastiques', 11.50, 'Matériel', 220, '2028-06-30');
 
 -- =====================================================
 -- TABLE : commandes
@@ -111,25 +111,25 @@ CREATE TABLE commandes (
 );
 
 INSERT INTO commandes VALUES
-(50001, 10001, '2023-02-15', 25.50, 'Valid�e', 'Pharmacie Centre'),
-(50002, 10002, '2023-03-20', 42.00, 'Valid�e', 'Pharmacie Nord'),
-(50003, 10003, '2023-04-12', 18.75, 'Valid�e', 'Pharmacie Sud'),
-(50004, 10247, '2023-04-10', 65.25, 'Valid�e', 'Pharmacie Centre'),
-(50005, 10004, '2023-05-08', 31.50, 'Valid�e', 'Pharmacie Centre'),
-(50006, 10005, '2023-05-15', 22.00, 'Valid�e', 'Pharmacie Centre'),
-(50007, 10006, '2023-06-01', 48.90, 'Valid�e', 'Pharmacie Nord'),
-(50008, 10007, '2023-06-18', 55.75, 'Valid�e', 'Pharmacie Sud'),
-(50009, 10008, '2023-07-22', 28.40, 'Valid�e', 'Pharmacie Centre'),
-(50010, 10009, '2023-08-30', 73.20, 'Valid�e', 'Pharmacie Nord'),
-(50011, 10010, '2023-09-12', 95.00, 'Valid�e', 'Pharmacie Sud'),
-(50012, 10011, '2023-10-05', 44.50, 'Valid�e', 'Pharmacie Centre'),
-(50013, 10013, '2023-11-18', 32.80, 'Valid�e', 'Pharmacie Nord'),
-(50014, 10014, '2024-11-20', 38.75, 'Valid�e', 'Pharmacie Sud'),
-(50015, 10015, '2023-12-10', 51.60, 'Valid�e', 'Pharmacie Centre'),
-(50016, 10020, '2024-01-15', 29.30, 'Valid�e', 'Pharmacie Nord'),
-(50017, 10021, '2024-02-20', 67.85, 'Valid�e', 'Pharmacie Sud'),
-(50018, 10023, '2024-03-25', 41.20, 'Valid�e', 'Pharmacie Centre'),
-(50019, 99999, '2024-04-10', 25.00, 'Valid�e', 'Pharmacie Nord'),
+(50001, 10001, '2023-02-15', 25.50, 'Validée', 'Pharmacie Centre'),
+(50002, 10002, '2023-03-20', 42.00, 'Validée', 'Pharmacie Nord'),
+(50003, 10003, '2023-04-12', 18.75, 'Validée', 'Pharmacie Sud'),
+(50004, 10247, '2023-04-10', 65.25, 'Validée', 'Pharmacie Centre'),
+(50005, 10004, '2023-05-08', 31.50, 'Validée', 'Pharmacie Centre'),
+(50006, 10005, '2023-05-15', 22.00, 'Validée', 'Pharmacie Centre'),
+(50007, 10006, '2023-06-01', 48.90, 'Validée', 'Pharmacie Nord'),
+(50008, 10007, '2023-06-18', 55.75, 'Validée', 'Pharmacie Sud'),
+(50009, 10008, '2023-07-22', 28.40, 'Validée', 'Pharmacie Centre'),
+(50010, 10009, '2023-08-30', 73.20, 'Validée', 'Pharmacie Nord'),
+(50011, 10010, '2023-09-12', 95.00, 'Validée', 'Pharmacie Sud'),
+(50012, 10011, '2023-10-05', 44.50, 'Validée', 'Pharmacie Centre'),
+(50013, 10013, '2023-11-18', 32.80, 'Validée', 'Pharmacie Nord'),
+(50014, 10014, '2024-11-20', 38.75, 'Validée', 'Pharmacie Sud'),
+(50015, 10015, '2023-12-10', 51.60, 'Validée', 'Pharmacie Centre'),
+(50016, 10020, '2024-01-15', 29.30, 'Validée', 'Pharmacie Nord'),
+(50017, 10021, '2024-02-20', 67.85, 'Validée', 'Pharmacie Sud'),
+(50018, 10023, '2024-03-25', 41.20, 'Validée', 'Pharmacie Centre'),
+(50019, 99999, '2024-04-10', 25.00, 'Validée', 'Pharmacie Nord'),
 (50020, 10024, '2024-05-05', 19.90, 'En attente', 'Pharmacie Sud'),
 (50021, 10022, '2024-06-12', 88.50, 'Annul�e', 'Pharmacie Centre');
 
@@ -191,9 +191,9 @@ INSERT INTO lignes_commande VALUES
 (70044, 50021, 1001, 1, 1.50);
 
 -- =====================================================
--- V�RIFICATIONS RAPIDES
+-- VéRIFICATIONS RAPIDES
 -- =====================================================
--- D�commentez ces requ�tes pour v�rifier les donn�es
+-- Décommentez ces requetes pour vérifier les données
 
 -- SELECT COUNT(*) AS total_clients FROM clients;
 -- SELECT COUNT(*) AS total_produits FROM produits;
