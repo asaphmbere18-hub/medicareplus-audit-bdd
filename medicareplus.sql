@@ -66,29 +66,29 @@ CREATE TABLE produits (
 );
 
 INSERT INTO produits VALUES
--- Categorie : Antidouleurs (prix normaux entre 5-15�)
+-- Categorie : Antidouleurs (prix normaux entre 5-15€)
 (1001, 'Paracétamol 1g', 8.50, 'Antidouleurs', 250, '2026-12-31'),
 (1002, 'Ibuprofène 400mg', 12.00, 'Antidouleurs', 180, '2026-08-15'),
 (1003, 'Aspirine 500mg', 6.75, 'Antidouleurs', 320, '2025-10-20'),
 (1004, 'Morphine 10mg', 0.01, 'Antidouleurs', 45, '2026-03-10'),
 (1005, 'Doliprane Enfant', 125.00, 'Antidouleurs', 90, '2026-05-18'),
 
--- Cat�gorie : Antibiotiques (prix normaux entre 15-35�)
+-- Catégorie : Antibiotiques (prix normaux entre 15-35€)
 (2001, 'Amoxicilline 1g', 22.50, 'Antibiotiques', 120, '2026-11-30'),
 (2002, 'Azithromycine 500mg', 28.00, 'Antibiotiques', 85, '2026-07-25'),
 (2003, 'Ciprofloxacine 500mg', 31.50, 'Antibiotiques', -5, '2026-09-12'),
 (2004, 'Pénicilline V', 18.75, 'Antibiotiques', 30, '2019-06-15'),
 
--- Cat�gorie : Vitamines (prix normaux entre 8-20�)
+-- Catégorie : Vitamines (prix normaux entre 8-20€)
 (3001, 'Vitamine C 1000mg', 12.90, 'Vitamines', 200, '2027-01-31'),
 (3002, 'Vitamine D 2000UI', 15.50, 'Vitamines', 150, '2026-12-15'),
 (3003, 'Multivitamines', 2.10, 'Vitamines', 180, '2026-08-20'),
 
--- Catégorie : Antihistaminiques (prix normaux entre 10-18�)
+-- Catégorie : Antihistaminiques (prix normaux entre 10-18€)
 (4001, 'Cétirizine 10mg', 14.20, 'Antihistaminiques', 140, '2026-10-30'),
 (4002, 'Loratadine 10mg', 11.80, 'Antihistaminiques', -12, '2026-06-18'),
 
--- Catégorie : Dermatologie (prix normaux entre 12-25�)
+-- Catégorie : Dermatologie (prix normaux entre 12-25€)
 (5001, 'Crème Hydratante', 18.50, 'Dermatologie', 95, '2025-12-31'),
 (5002, 'Pommade Cicatrisante', 21.00, 'Dermatologie', 40, '2024-03-15'),
 
@@ -131,7 +131,7 @@ INSERT INTO commandes VALUES
 (50018, 10023, '2024-03-25', 41.20, 'Validée', 'Pharmacie Centre'),
 (50019, 99999, '2024-04-10', 25.00, 'Validée', 'Pharmacie Nord'),
 (50020, 10024, '2024-05-05', 19.90, 'En attente', 'Pharmacie Sud'),
-(50021, 10022, '2024-06-12', 88.50, 'Annul�e', 'Pharmacie Centre');
+(50021, 10022, '2024-06-12', 88.50, 'Annulée', 'Pharmacie Centre');
 
 -- =====================================================
 -- TABLE : lignes_commande
