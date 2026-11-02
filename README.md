@@ -43,7 +43,7 @@ Le script peut être relancé : la première ligne supprime l'ancienne table `cl
 
 ## Résultats
 
-### Clients : 16 sur 25 présentent au moins une anomalie
+### Clients : 16 sur 25 présentent au moins une anomalie sur la base d’origine
 Un client est compté s'il cumule au moins l'un de ces sept défauts :
 
 | Anomalie | Clients concernés |
