@@ -3,7 +3,7 @@
 -- SGBD : PostgreSQL (exécuter dans la base MediCarePlus, après medicareplus.sql)
 --
 -- Ce que fait le script, en 3 parties :
---   Partie 1 : diagnostic. 12 contrôles en lecture seule (aucune donnée modifiée).
+--   Partie 1 : diagnostic. 12 contrôles et une synthèse.
 --   Partie 2 : nettoyage des clients, dans une transaction (emails, codes postaux, doublon).
 --   Partie 3 : création de la table client_contact avec les contacts nettoyés.
 -- Le script peut être relancé plusieurs fois : la première ligne supprime l'ancienne table.
@@ -173,6 +173,29 @@ WHERE p.id_produit IS NULL;
 -- Ce que fait le script : trouve les lignes de commande dont le produit n'existe pas dans produits.
 -- Résultat attendu : la ligne 70039 (commande 50019, produit 9999 inexistant).
 -- La commande 50019 cumule donc deux anomalies : un client et un produit inexistants.
+
+-- 1.13 Synthèse : clients ayant au moins une anomalie
+SELECT COUNT(*) AS clients_en_anomalie, (SELECT COUNT(*) FROM clients) AS total
+FROM clients
+WHERE email IS NULL OR email <> LOWER(TRIM(email))
+   OR telephone IS NULL OR telephone !~ '^0[0-9]{9}$'
+   OR code_postal !~ '^[0-9]{5}$'
+   OR date_naissance < '1900-01-01' OR date_naissance > date_inscription - INTERVAL '16 years'
+   OR prenom IS NULL;
+-- Ce que fait le script : compte les clients qui ont au moins une anomalie dans leurs données.
+-- Ligne par ligne :
+--   email IS NULL : email vide.
+--   email <> LOWER(TRIM(email)) : email avec majuscules ou espaces.
+--   telephone IS NULL : téléphone vide.
+--   telephone !~ '^0[0-9]{9}$' : téléphone qui ne commence pas par 0 ou qui n'a pas 10 chiffres.
+--   code_postal !~ '^[0-9]{5}$' : code postal qui n'a pas exactement 5 chiffres.
+--   date_naissance < '1900-01-01' : né avant 1900.
+--   date_naissance > date_inscription - INTERVAL '16 years' : né moins de 16 ans avant son inscription.
+--   prenom IS NULL : prénom vide.
+-- Résultat attendu : 16 clients sur 25 sur la base d'origine (exécutée en partie 1, avant le nettoyage).
+-- Relancée après la partie 2, elle donne 11 sur 24 : les emails et codes postaux sont corrigés,
+-- le doublon est supprimé, mais les téléphones de la table clients ne sont pas modifiés
+-- (ils sont nettoyés dans client_contact) et les valeurs vides ne peuvent pas être inventées.
 
 -- ============ PARTIE 2 : NETTOYAGE DES DONNÉES ============
 -- Tout ce qui suit est exécuté dans une transaction : BEGIN ouvre la transaction, COMMIT la valide.
